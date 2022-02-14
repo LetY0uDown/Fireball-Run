@@ -1,10 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace Fireball_Run
@@ -44,25 +51,11 @@ namespace Fireball_Run
 
         private Random random = new();
 
-        private Entity enemy = new()
-        {
-            Body = new Image
-            {
-                Source = new BitmapImage(new Uri(@"Images/fireball-pixel-art.png", UriKind.Relative)),
-                Width = FIREBALL_WIDTH,
-                Height = FIREBALL_HEIGHT
-            },
-            Position = new()
-            {
-                X = ENEMY_START_POS,
-                Y = GAME_FIELD_HEIGHT
-            }
-        };
         private Entity character = new()
         {
             Body = new Image
             {
-                Source = new BitmapImage(new Uri(@"Images/BlueMage.png", UriKind.Relative)),
+                Source = new BitmapImage(new Uri("Images/BlueMage.png", UriKind.Relative)),
                 Width = 60,
                 Height = 80
             },
@@ -77,7 +70,7 @@ namespace Fireball_Run
         {
             GameField.Children.Add(new Image
             {
-                Source = new BitmapImage(new Uri(@"Images/FireMage.png", UriKind.Relative)),
+                Source = new BitmapImage(new Uri("Images/FireMage.png", UriKind.Relative)),
                 Height = 150
             });
 
@@ -86,7 +79,7 @@ namespace Fireball_Run
 
             scores = 0;
             enemies.Clear();
-            GameField.Children.Add(character.Body);
+            GameField.Children.Add(character.Body);            
 
             Canvas.SetBottom(character.Body, GAME_FIELD_HEIGHT);
             Canvas.SetLeft(character.Body, CHARACTER_POS);
@@ -107,7 +100,7 @@ namespace Fireball_Run
         private void Timer_Tick(object? sender, EventArgs e)
         {
             if (random.Next(0, 500) == 0 || enemies.Count == 0)
-                SpawnEnemy();
+                SpawnEnemy();            
 
             foreach (var enemy in enemies.ToList())
             {
@@ -116,8 +109,6 @@ namespace Fireball_Run
             }
 
             tbScores.Text = $"Score: {scores++}";
-
-
         }
 
         private void CollisionCheck(Entity enemy)
@@ -144,7 +135,7 @@ namespace Fireball_Run
             {
                 Body = new Image
                 {
-                    Source = new BitmapImage(new Uri(@"Images/fireball-pixel-art.png", UriKind.Relative)),
+                    Source = new BitmapImage(new Uri("Images/fireball-pixel-art.png", UriKind.Relative)),
                     Width = FIREBALL_WIDTH,
                     Height = FIREBALL_HEIGHT
                 },
