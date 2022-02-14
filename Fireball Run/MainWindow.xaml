@@ -27,7 +27,7 @@
                 <Image Source="Images/GameTitle.png"
                        Margin="100 0 100 50"/>
 
-                <Image MouseDown="Image_MouseDown" Width="210">
+                <Image MouseDown="StartImage_MouseDown" Width="210">
                     <Image.Style>
                         <Style TargetType="Image">
 

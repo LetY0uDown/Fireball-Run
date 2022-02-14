@@ -185,7 +185,7 @@ namespace Fireball_Run
                 Jump();
         }
 
-        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        private void StartImage_MouseDown(object sender, MouseButtonEventArgs e)
         {
             GameField.Children.Clear();
             StartNewGame();
