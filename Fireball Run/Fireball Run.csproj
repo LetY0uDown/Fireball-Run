@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\DisposableDroidBB.ttf" />
+    <None Remove="Fonts\DisposableDroidBB_bld.ttf" />
+    <None Remove="Fonts\DisposableDroidBB_bldital.ttf" />
+    <None Remove="Fonts\DisposableDroidBB_ital.ttf" />
     <None Remove="Images\BlueMage.png" />
     <None Remove="Images\DeadBlueMage.png" />
     <None Remove="Images\ExitButtonDefault.png" />
@@ -22,6 +26,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Fonts\DisposableDroidBB.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Fonts\DisposableDroidBB_bld.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Fonts\DisposableDroidBB_bldital.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Fonts\DisposableDroidBB_ital.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\BlueMage.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

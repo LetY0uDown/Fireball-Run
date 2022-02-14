@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Fireball_Run"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="800"
         WindowStartupLocation="CenterScreen"
@@ -24,8 +23,9 @@
             <StackPanel x:Name="MenuPanel" Grid.Row="1" 
                         HorizontalAlignment="Center" VerticalAlignment="Center">
 
-                <Image Source="Images/GameTitle.png"
-                       Margin="100 0 100 50"/>
+                <TextBlock Text="Fireball Run" FontSize="100"
+                           Margin="100 0 100 10" 
+                           FontFamily="Fonts/DisposableDroidBB.ttf #DisposableDroid BB"/>
 
                 <Image MouseDown="StartImage_MouseDown" Width="210">
                     <Image.Style>
@@ -59,9 +59,11 @@
             </StackPanel>
 
             <Border Background="Black">
-                <TextBlock FontSize="20" Name="tbScores"
+                <TextBlock FontSize="24" Name="tbScores"
                            Foreground="White" 
-                           HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                           FontFamily="Fonts/DisposableDroidBB.ttf #DisposableDroid BB"
+                           HorizontalAlignment="Right" VerticalAlignment="Center"
+                           Margin="0 0 10 0"/>
             </Border>
 
             <Canvas x:Name="GameField" Grid.Row="1"/>

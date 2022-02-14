@@ -1,24 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Controls;
 using System.Windows.Threading;
+using System.Collections.Generic;
+using System.Windows.Media.Imaging;
 
 namespace Fireball_Run
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -79,7 +69,7 @@ namespace Fireball_Run
 
             scores = 0;
             enemies.Clear();
-            GameField.Children.Add(character.Body);            
+            GameField.Children.Add(character.Body);
 
             Canvas.SetBottom(character.Body, GAME_FIELD_HEIGHT);
             Canvas.SetLeft(character.Body, CHARACTER_POS);
@@ -100,7 +90,7 @@ namespace Fireball_Run
         private void Timer_Tick(object? sender, EventArgs e)
         {
             if (random.Next(0, 500) == 0 || enemies.Count == 0)
-                SpawnEnemy();            
+                SpawnEnemy();
 
             foreach (var enemy in enemies.ToList())
             {
