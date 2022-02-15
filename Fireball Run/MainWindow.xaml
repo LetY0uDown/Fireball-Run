@@ -4,11 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800"
+        Title="MainWindow" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize" WindowStyle="None"
-        KeyUp="Window_KeyUp">
-    <!-- НАША ПРОГА НЕ УМИРАЙ ПОЖАЛУЙСТА -->
+        KeyUp="Window_KeyUp" Loaded="Window_Loaded"
+        MouseDown="Window_MouseDown"
+        Icon="Images/BlueMage.png">
+    
     <Window.Background>
         <ImageBrush ImageSource="Images/GameBackground.png"/>
     </Window.Background>
@@ -16,16 +18,13 @@
     <Border BorderBrush="Black"
             BorderThickness="2">
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
-                <RowDefinition />
-            </Grid.RowDefinitions>
-            <StackPanel x:Name="MenuPanel" Grid.Row="1" 
+            <StackPanel x:Name="MenuPanel"  
                         HorizontalAlignment="Center" VerticalAlignment="Center">
 
                 <TextBlock Text="Fireball Run" FontSize="100"
+                           x:Name="tbTitle"
                            Margin="100 0 100 10" 
-                           FontFamily="Fonts/DisposableDroidBB.ttf #DisposableDroid BB"/>
+                           FontFamily="Fonts/#DisposableDroid BB"/>
 
                 <Image MouseDown="StartImage_MouseDown" Width="210">
                     <Image.Style>
@@ -57,17 +56,25 @@
                     </Image.Style>
                 </Image>
             </StackPanel>
+            
+            <TextBlock FontSize="24" Name="tbPersonalBest"
+                       Foreground="Black" 
+                       FontFamily="Fonts/#DisposableDroid BB"
+                       HorizontalAlignment="Left" Margin="10 0 0 0"/>
 
-            <Border Background="Black">
-                <TextBlock FontSize="24" Name="tbScores"
-                           Foreground="White" 
-                           FontFamily="Fonts/DisposableDroidBB.ttf #DisposableDroid BB"
-                           HorizontalAlignment="Right" VerticalAlignment="Center"
-                           Margin="0 0 10 0"/>
-            </Border>
+            <TextBlock FontSize="38" Name="tbNewRecord"
+                       Text="New Record!" 
+                       Foreground="Red" 
+                       FontFamily="Fonts/#DisposableDroid BB"
+                       HorizontalAlignment="Center" VerticalAlignment="Top"
+                       Margin="0 20 0 0"/>
 
+            <TextBlock FontSize="24" Name="tbScores"
+                       Foreground="Black" 
+                       FontFamily="Fonts/#DisposableDroid BB"
+                       HorizontalAlignment="Right" Margin="0 0 10 0"/>
+            
             <Canvas x:Name="GameField" Grid.Row="1"/>
-
         </Grid>
     </Border>
 </Window>
