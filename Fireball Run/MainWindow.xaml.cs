@@ -26,7 +26,7 @@ namespace Fireball_Run
             timer.Tick += Timer_Tick;
         }
 
-        private readonly int FIREBALL_START_POS = 810;
+        private const int FIREBALL_START_POS = 810;
         private const int GAME_FIELD_HEIGHT = 100;
 
         private const int FIREBALL_WIDTH = 60;
@@ -34,7 +34,7 @@ namespace Fireball_Run
 
         private const int CHARACTER_POS = 50;
 
-        private int enemySpeed
+        private int fireballSpeed
         {
             get
             {
@@ -140,7 +140,7 @@ namespace Fireball_Run
 
         private void MoveEnemy(Entity enemy)
         {
-            enemy.Position.X -= enemySpeed;
+            enemy.Position.X -= fireballSpeed;
             Canvas.SetLeft(enemy.Body, enemy.Position.X);
 
             if (enemy.Position.X < -20)

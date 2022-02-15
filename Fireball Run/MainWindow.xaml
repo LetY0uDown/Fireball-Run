@@ -64,7 +64,7 @@
 
             <TextBlock FontSize="38" Name="tbNewRecord"
                        Text="New Record!" 
-                       Foreground="Red" 
+                       Foreground="Red" Visibility="Collapsed"
                        FontFamily="Fonts/#DisposableDroid BB"
                        HorizontalAlignment="Center" VerticalAlignment="Top"
                        Margin="0 20 0 0"/>
@@ -74,7 +74,7 @@
                        FontFamily="Fonts/#DisposableDroid BB"
                        HorizontalAlignment="Right" Margin="0 0 10 0"/>
             
-            <Canvas x:Name="GameField" Grid.Row="1"/>
+            <Canvas x:Name="GameField"/>
         </Grid>
     </Border>
 </Window>
